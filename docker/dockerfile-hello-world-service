@@ -1,0 +1,11 @@
+FROM node:boron-slim
+
+ENV GRPC_NODE_VERSION 1.0.0
+
+WORKDIR /hello-world-service
+
+RUN npm install -g grpc@${GRPC_NODE_VERSION} grpc-tools@${GRPC_NODE_VERSION}
+
+EXPOSE 50051
+
+CMD [ "npm", "start" ]
